@@ -2,16 +2,20 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",  // ✅ or "node" instead of "nodenext"
+    "moduleResolution": "bundler", 
     "baseUrl": ".",  
     "paths": {
-      "globalConfig/*": ["globalConfig/*"]
+      "globalConfig/*": ["globalConfig/*"],
+      "pages/*": ["pages/*"],
+      "fixtures/*": ["fixtures/*"],
+      "utils/*": ["utils/*"],
+       "configs/*": ["configs/*"]
     },
     "allowJs": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "strict": true,
-    "noEmit": true // ✅ prevents .js file output
+    "noEmit": true,
   },
-  "include": ["tests", "globalConfig"]
+  "include": ["tests", "globalConfig", "pages", "fixtures", "utils", "configs"]
 }

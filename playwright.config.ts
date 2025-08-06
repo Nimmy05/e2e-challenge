@@ -1,4 +1,4 @@
-import 'tsconfig-paths/register';
+import 'tsconfig-paths/register.js';
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 dotenv.config();
