@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext", // required if you use ES Modules and imports
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "globalConfig/*": ["globalConfig/*"]
+    },
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node", "playwright"]
+  },
+  "include": ["tests", "globalConfig", "playwright.config.ts"]
+}
