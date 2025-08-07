@@ -40,7 +40,7 @@ test.describe(`Automate the 'Subtraction' operation of 'Vite App'`, () => {
             await calculatorPage.verifyResult(thisTestConfig.max_numbers_sum);
         });
 
-        await test.step(`Verify subtraction operation with decimal numbers"`, async () => {
+        await test.step(`Verify subtraction operation with decimal numbers`, async () => {
             for (const { num1, num2, expected } of thisTestConfig.subtraction_decimal_sets) {
                 await calculatorPage.clearInput();
                 await calculatorPage.clickDecimalNumber(num1, digitDataTestId);
