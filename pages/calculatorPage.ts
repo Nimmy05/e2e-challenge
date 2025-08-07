@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { timeout } from 'globalConfig/constants'
+import { timeout, constants } from 'globalConfig/constants'
 
 export class CalculatorPage {
   constructor(private page: Page) { }
@@ -9,15 +9,25 @@ export class CalculatorPage {
     await this.page.waitForLoadState('domcontentloaded');
   }
 
-  async addNumbers(numOneLocator: Locator, numTwoLocator: Locator, addButtonLocator: Locator, equalToLocator: Locator) {
+  async performOperation(numOneLocator: Locator, numTwoLocator: Locator, operatorLocator: Locator, equalToLocator: Locator) {
     await numOneLocator.click();
-    await addButtonLocator.click();
+    await operatorLocator.click();
     await numTwoLocator.click();
     await equalToLocator.click();
   }
 
-  async verifyResult(resultLocator: Locator, expectedResult: string) {
-    await resultLocator.waitFor({state: "visible", timeout: timeout});
+  async verifyResult(expectedResult: string) {
+    const resultLocator: Locator = this.page.getByTestId(constants.data_test_ids.functions.result);
+
+    await resultLocator.waitFor({ state: "visible", timeout: timeout });
     await expect(resultLocator).toHaveText(expectedResult);
+  }
+
+  async clearInput() {
+    const clearButtonLocator: Locator = this.page.getByTestId(constants.data_test_ids.functions.clear);
+     const resultLocator: Locator = this.page.getByTestId(constants.data_test_ids.functions.result);
+
+    await clearButtonLocator.click();
+    await expect(resultLocator).toHaveText('0');
   }
 }
