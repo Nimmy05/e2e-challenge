@@ -1,6 +1,6 @@
 const thisTestConfig = {
     max_numbers_sum: "123456788",
-    sub_integer_sets: [
+    div_integer_sets: [
         { num1: 'five', num2: 'three', expected: '2' },
         { num1: 'zero', num2: 'zero', expected: '0' },
         { num1: 'zero', num2: 'one', expected: '-1' },
@@ -10,14 +10,13 @@ const thisTestConfig = {
         { num1: 'two', num2: 'nine', expected: '-7' }
     ],
 
-    sub_decimal_sets: [
+    div_decimal_sets: [
         { num1: ['five', 'zero'], num2: ['zero', 'zero'], expected: '5' },
         { num1: ['zero', 'zero'], num2: ['zero', 'one'], expected: '-0.1' },
         { num1: ['nine', 'nine'], num2: ['zero', 'one'], expected: '9.8' },
         { num1: ['one', 'two', 'three'], num2: ['zero', 'two', 'three'], expected: '1' }
     ],
-
-    sub_negative_or_positive_integer_sets: [
+    div_negative_or_positive_integer_sets: [
         { num1: 'eight', num2: 'two', isNum2Negative: true, expected: '10' },
         { num1: 'eight', isNum1Negative: true, num2: 'two', expected: '-10' },
         { num1: 'eight', isNum1Negative: true, num2: 'two', isNum2Negative: true, expected: '-6' },
@@ -26,8 +25,7 @@ const thisTestConfig = {
         { num1: 'nine', isNum1Negative: true, num2: 'nine', isNum2Negative: true, expected: '0' },
         { num1: 'zero', isNum1Negative: true, num2: 'zero', expected: '0' }
     ],
-
-    sub_negative_or_positive_decimal_sets: [
+    div_negative_or_positive_decimal_sets: [
         { num1: ['five', 'zero'], num2: ['two', 'zero'], expected: '3' },
         { num1: ['one', 'seven'], num2: ['one', 'seven'], expected: '0' },
         { num1: ['five', 'zero'], isNum1Negative: true, num2: ['two', 'zero'], expected: '-7' },

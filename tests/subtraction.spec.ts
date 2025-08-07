@@ -17,7 +17,7 @@ test.describe(`Automate the 'Subtraction' operation of 'Vite App'`, () => {
         });
 
         await test.step(`Verify subtraction operation with integer numbers`, async () => {
-            for (const { num1, num2, expected } of thisTestConfig.subtraction_integer_sets) {
+            for (const { num1, num2, expected } of thisTestConfig.sub_integer_sets) {
                 await calculatorPage.clearInput();
                 await calculatorPage.performOperation(
                     byDataTestId(page, digitDataTestId[num1]),
@@ -41,7 +41,7 @@ test.describe(`Automate the 'Subtraction' operation of 'Vite App'`, () => {
         });
 
         await test.step(`Verify subtraction operation with decimal numbers`, async () => {
-            for (const { num1, num2, expected } of thisTestConfig.subtraction_decimal_sets) {
+            for (const { num1, num2, expected } of thisTestConfig.sub_decimal_sets) {
                 await calculatorPage.clearInput();
                 await calculatorPage.clickDecimalNumber(num1, digitDataTestId);
                 await subtractionOperator.click();
@@ -52,7 +52,7 @@ test.describe(`Automate the 'Subtraction' operation of 'Vite App'`, () => {
         });
 
         await test.step(`Verify subtraction involving negative integers`, async () => {
-            for (const { num1, isNum1Negative, num2, isNum2Negative, expected } of thisTestConfig.subtraction_neg_or_pos_integer_sets) {
+            for (const { num1, isNum1Negative, num2, isNum2Negative, expected } of thisTestConfig.sub_negative_or_positive_integer_sets) {
                 await calculatorPage.clearInput();
                 await calculatorPage.clickNumber(num1, digitDataTestId, isNum1Negative);
                 await subtractionOperator.click();
@@ -63,7 +63,7 @@ test.describe(`Automate the 'Subtraction' operation of 'Vite App'`, () => {
         });
 
         await test.step(`Verify subtraction with positive/negative decimal values (±)`, async () => {
-            for (const { num1, isNum1Negative, num2, isNum2Negative, expected } of thisTestConfig.subtraction_neg_or_pos_decimal_sets) {
+            for (const { num1, isNum1Negative, num2, isNum2Negative, expected } of thisTestConfig.sub_negative_or_positive_decimal_sets) {
                 await calculatorPage.clearInput();
                 await calculatorPage.clickDecimalNumber(num1, digitDataTestId);
                 if (isNum1Negative) await plusMinusLocator.click();
