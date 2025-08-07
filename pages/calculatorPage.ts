@@ -30,4 +30,21 @@ export class CalculatorPage {
     await clearButtonLocator.click();
     await expect(resultLocator).toHaveText('0');
   }
+
+  // ✅ Clicks each digit including the decimal point at the correct place
+  async clickDecimalNumber(digits: string[], digitDataTestId: Record<string, string>) {
+    const decimalPointLocator = this.page.getByTestId(constants.data_test_ids.functions.decimal);
+    for (let i = 0; i < digits.length; i++) {
+      if (i === 1) await decimalPointLocator.click();
+      await this.page.getByTestId(digitDataTestId[digits[i]]).click();
+    }
+  }
+
+  // ✅ Clicks a number, and optionally makes it negative using ±
+  async clickNumber(digit: string, digitDataTestId: Record<string, string>, isNegative?: boolean) {
+    await this.page.getByTestId(digitDataTestId[digit]).click();
+    if (isNegative) {
+      await this.page.getByTestId(constants.data_test_ids.functions.plus_or_minus).click();
+    }
+  }
 }

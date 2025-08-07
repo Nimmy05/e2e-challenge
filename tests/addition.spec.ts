@@ -78,6 +78,35 @@ test.describe(`Automate the 'Addition' operation of 'Vite App'`, () => {
             }
         });
 
+        await test.step(`Verify the 'Subtraction' of 'Negative or Positive' numbers`, async ({ }) => {
+            for (const integerSet of thisTestConfig.subtraction_neg_or_pos_integer_sets) {
+                await calculatorPage.clearInput();
+
+                await byDataTestId(page, digitDataTestId[integerSet.num1]).click();
+
+                if (integerSet.isNum1Negative) {
+                    await byDataTestId(page, constants.data_test_ids.functions.plus_or_minus).click();
+                }
+
+                await additionOperator.click();
+
+                await byDataTestId(page, digitDataTestId[integerSet.num2]).click();
+                if (integerSet.isNum2Negative) {
+                    await byDataTestId(page, constants.data_test_ids.functions.plus_or_minus).click();
+                }
+
+                if (integerSet.bothNegative) {
+                    await byDataTestId(page, digitDataTestId[integerSet.num1]).click();
+                    await byDataTestId(page, constants.data_test_ids.functions.plus_or_minus).click();
+                    await byDataTestId(page, digitDataTestId[integerSet.num2]).click();
+                    await byDataTestId(page, constants.data_test_ids.functions.plus_or_minus).click();
+                }
+
+                await equalsOperator.click();
+                await calculatorPage.verifyResult(integerSet.expected);
+            }
+        });
+
 
 
     });

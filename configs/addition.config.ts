@@ -14,6 +14,13 @@ const thisTestConfig = {
         { num1: ['zero','zero'], num2: ['zero','one'], expected: '0.1' },
         { num1: ['nine','nine'], num2: ['zero','one'], expected: '10' },
         { num1: ['one','two', 'three'], num2: ['two','seven', 'seven'], expected: '4' }
+    ],
+    subtraction_neg_or_pos_integer_sets: [
+        { num1: 'eight', num2: 'two', isNum2Negative: true, expected: '6' },
+        { num1: 'three', isNum1Negative: true, num2: 'four', expected: '1' },
+        { num1: 'eight', isNum1Negative: true, num2: 'two', expected: '-6' },
+        { num1: 'eight', bothNegative: true, num2: 'two', expected: '-10' },
+
     ]
 };
 
