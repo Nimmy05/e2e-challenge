@@ -21,8 +21,8 @@ The tests use Playwright with TypeScript and include a clean, modular structure 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/vite-calculator-e2e.git
-cd vite-calculator-e2e
+git clone https://github.com/Nimmy05/e2e-challenge
+cd e2e-challenge
 ```
 
 ### 2. Install Dependencies
