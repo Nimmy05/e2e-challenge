@@ -121,5 +121,6 @@ VITE_APP_BASE_URL=http://localhost:5173
 
 **Nimmy Abraham Chandredath**  
 Experienced QA Automation Engineer | FinTech & Web App Testing Expert
+nimmysmail@gmail.com
 
 ---
