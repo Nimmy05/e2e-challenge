@@ -51,7 +51,7 @@ test.describe(`Automate the 'Addition' operation of 'Vite App'`, () => {
             }
         });
 
-        await test.step(`Verify subtraction involving negative integers`, async () => {
+        await test.step(`Verify addition involving negative integers`, async () => {
             for (const { num1, isNum1Negative, num2, isNum2Negative, expected } of thisTestConfig.add_negative_or_positive_integer_sets) {
                 await calculatorPage.clearInput();
                 await calculatorPage.clickNumber(num1, digitDataTestId, isNum1Negative);
@@ -62,7 +62,7 @@ test.describe(`Automate the 'Addition' operation of 'Vite App'`, () => {
             }
         });
 
-        await test.step(`Verify subtraction with positive/negative decimal values (±)`, async () => {
+        await test.step(`Verify addition with positive/negative decimal values (±)`, async () => {
             for (const { num1, isNum1Negative, num2, isNum2Negative, expected } of thisTestConfig.add_negative_or_positive_decimal_sets) {
                 await calculatorPage.clearInput();
                 await calculatorPage.clickDecimalNumber(num1, digitDataTestId);
